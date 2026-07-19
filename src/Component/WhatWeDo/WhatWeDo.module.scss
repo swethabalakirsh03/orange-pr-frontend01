@@ -1,0 +1,349 @@
+$tablet: 992px;
+$mobile: 768px;
+$small: 480px;
+
+.container {
+    display: grid;
+    grid-template-columns: 1.1fr 2fr;
+    gap: 60px;
+    padding: 80px 60px;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+
+    @media (max-width: $tablet) {
+        grid-template-columns: 1fr;
+        gap: 48px;
+        padding: 60px 40px;
+    }
+
+    @media (max-width: $mobile) {
+        padding: 40px 24px;
+    }
+
+    @media (max-width: $small) {
+        padding: 30px 16px;
+    }
+}
+
+.contentLeft {
+    display: flex;
+    flex-direction: column;
+    max-width: 380px;
+
+    @media (max-width: $tablet) {
+        max-width: 100%;
+    }
+}
+
+.heading {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: #111111;
+    margin: 0 0 16px 0;
+
+    @media (max-width: $mobile) {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    @media (max-width: $small) {
+        font-size: 30px;
+    }
+
+    @media (max-width: $tablet) {
+        text-align: center;
+    }
+}
+
+.subHeading {
+    font-size: 20px;
+    font-weight: 500;
+    color: #466378;
+    margin: 0 0 36px 0;
+
+    @media (max-width: $mobile) {
+        text-align: center;
+    }
+
+    @media (max-width: $tablet) {
+        text-align: center;
+    }
+}
+
+.description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555555;
+    margin: 0 0 40px 0;
+
+    @media (max-width: $mobile) {
+        text-align: center;
+    }
+
+    @media (max-width: $tablet) {
+        text-align: center;
+    }
+}
+
+.actionRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.readMoreBtn {
+    background: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 14px 36px;
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    border-radius: 4px;
+
+    &:hover {
+        background: #222222;
+    }
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #b0bec5;
+}
+
+.activeNum {
+    color: #111111;
+}
+
+.inactiveNum {
+    color: #b0bec5;
+}
+
+.divider {
+    color: #b0bec5;
+}
+
+
+
+
+.cardsRight {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    height: 480px;
+    align-items: flex-start;
+
+    @media (max-width: $mobile) {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 10px;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        scrollbar-width: none;
+    }
+}
+
+.card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    scroll-snap-align: start;
+    box-sizing: border-box;
+
+    // Default inactive card sizing layout
+    flex: 1;
+    height: 480px;
+
+    // Transition handles the sliding width adjustments smoothly
+    transition: flex 0.4s cubic-bezier(0.25, 1, 0.5, 1), height 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+
+    @media (max-width: $mobile) {
+        flex: 0 0 260px;
+        height: 420px;
+    }
+
+    &.isActive {
+        flex: 1.4;
+        height: 520px; // Gives the active card its extended vertical layout drop
+        cursor: default;
+
+        @media (max-width: $mobile) {
+            flex: 0 0 290px;
+            height: 460px;
+        }
+    }
+}
+
+.cardlast {
+    height: 440px;
+
+}
+
+.center {
+    height: 460px;
+
+}
+
+.cardBg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.cardOverlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* Dark gradient background layer */
+.tint {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.85) 0%,
+            rgba(0, 0, 0, 0.3) 40%,
+            rgba(0, 0, 0, 0.05) 70%,
+            transparent 100%);
+    z-index: 1;
+}
+
+/* Curved, feathered glass blur layer isolated strictly to the bottom section */
+.blur {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(6px);
+
+    -webkit-mask-image:
+        radial-gradient(ellipse 130% 75% at 50% 100%,
+            rgba(0, 0, 0, 0.85) 0%,
+            rgba(0, 0, 0, 0.8) 40%,
+            rgba(0, 0, 0, 0.6) 60%,
+            transparent 100%),
+        linear-gradient(to top,
+            rgba(0, 0, 0, 0.85) 0%,
+            rgba(0, 0, 0, 0.7) 30%,
+            transparent 65%);
+
+    mask-image:
+        radial-gradient(ellipse 130% 75% at 50% 100%,
+            rgba(0, 0, 0, 0.85) 0%,
+            rgba(0, 0, 0, 0.8) 40%,
+            rgba(0, 0, 0, 0.6) 60%,
+            transparent 100%),
+        linear-gradient(to top,
+            rgba(0, 0, 0, 0.85) 0%,
+            rgba(0, 0, 0, 0.7) 30%,
+            transparent 65%);
+}
+
+/* Foreground content container housing elements */
+.cardBody {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.cardTextContent {
+    color: #ffffff;
+    max-width: 75%;
+}
+
+.cardTitle {
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: -0.01em;
+
+    @media (max-width: $tablet) {
+        font-size: 26px;
+    }
+}
+
+.blockSpan {
+    display: block;
+    font-weight: 400;
+
+}
+
+.cardDesc {
+    font-size: 9px;
+    line-height: 1.45;
+    margin: 10px 0 0 0;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.85);
+    animation: textFadeIn 0.3s ease-out forwards;
+}
+
+/* Circle slider navigation button element matching the design */
+.circleArrowBtn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #466378;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-bottom: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+
+    svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    &:hover {
+        transform: scale(1.06);
+    }
+
+    @media (max-width: $tablet) {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+@keyframes textFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

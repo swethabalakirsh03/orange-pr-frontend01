@@ -1,0 +1,215 @@
+$tablet: 992px;
+$mobile: 768px;
+$small: 480px;
+
+// ---------- Full screen split layout ----------
+
+.wrapper {
+    // position: relative;
+    // width: 100%;
+    // display: flex;
+    // overflow: hidden;
+    // padding: 40px 0 0 !important;
+    position: relative;
+    padding: 40px 60px;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.wrapper_inner {
+    position: relative;
+    width: 100%;
+    height: 25vh;
+    min-height: 560px;
+    display: flex;
+    overflow: hidden;
+
+    @media (max-width: $tablet) {
+        height: auto;
+        min-height: 0;
+        flex-direction: column;
+    }
+}
+
+.imageSide {
+    flex: 1 1 0;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: #dddddd; // shows while you wire up the real image
+
+    @media (max-width: $tablet) {
+        flex: 1 1 auto;
+        height: 320px;
+    }
+
+    @media (max-width: $mobile) {
+        height: 260px;
+    }
+
+    @media (max-width: $small) {
+        height: 200px;
+    }
+}
+
+.greySide {
+    flex: 1 1 0;
+    height: 100%;
+    background: #ececec;
+
+    @media (max-width: $tablet) {
+        flex: 1 1 auto;
+        height: 140px;
+    }
+
+    @media (max-width: $mobile) {
+        height: 80px;
+    }
+}
+
+// ---------- Card ----------
+
+.card {
+    position: absolute;
+    top: 50%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    width: clamp(420px, 52vw, 820px);
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 48px 56px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    z-index: 2;
+
+    @media (max-width: $tablet) {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 92%;
+        max-width: 760px;
+        margin: -90px auto 40px;
+        padding: 40px 44px;
+    }
+
+    @media (max-width: $mobile) {
+        width: calc(100% - 32px);
+        margin: -70px auto 32px;
+        padding: 32px 28px;
+    }
+
+    @media (max-width: $small) {
+        width: calc(100% - 20px);
+        margin: -50px auto 24px;
+        padding: 24px 20px;
+    }
+}
+
+.heading {
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    color: #111111;
+    margin: 0 0 28px 0;
+
+    @media (max-width: $mobile) {
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: $small) {
+        font-size: 22px;
+    }
+}
+
+.row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+
+    @media (max-width: $small) {
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 16px;
+    }
+}
+
+.submitBtn {
+    align-self: flex-start;
+    margin-top: 8px;
+    background: #111111;
+    color: #ffffff;
+    border: none;
+    padding: 14px 40px;
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+
+    &:hover {
+        background: #2a2a2a;
+    }
+
+    @media (max-width: $small) {
+        width: 100%;
+        text-align: center;
+        padding: 14px 24px;
+    }
+}
+
+// ---------- Input field (used by utils/input/InputField.jsx) ----------
+
+.field {
+    width: 100%;
+    border: 1px solid #e4e4e4;
+    border-radius: 6px;
+    padding: 14px 16px;
+    font-size: 13px;
+    font-family: inherit;
+    color: #222222;
+    background: #ffffff;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+
+    &::placeholder {
+        color: #9a9a9a;
+    }
+
+    &:focus {
+        border-color: #111111;
+    }
+}
+
+.input {
+    height: 48px;
+
+    @media (max-width: $small) {
+        height: 44px;
+    }
+}
+
+.textarea {
+    min-height: 110px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.fullWidth {
+    width: 100%;
+    margin-bottom: 24px;
+
+    @media (max-width: $small) {
+        margin-bottom: 16px;
+    }
+}

@@ -1,0 +1,111 @@
+$tablet: 992px;
+$mobile: 768px;
+
+.newsletterSection {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 26px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.inner {
+    width: min(100% - 4rem, 1400px);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+
+    @media (max-width: $tablet) {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    @media (max-width: $mobile) {
+        width: calc(100% - 40px);
+    }
+}
+
+.textContent {
+    flex: 1;
+    max-width: 500px;
+}
+
+.heading {
+    font-size: 42px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+
+    @media (max-width: $mobile) {
+        font-size: 32px;
+    }
+}
+
+.description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+.formContent {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+
+    @media (max-width: $tablet) {
+        justify-content: flex-start;
+        margin-top: 20px;
+    }
+}
+
+.inputWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+
+    @media (max-width: $tablet) {
+        max-width: 100%;
+    }
+}
+
+.input {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 16px 60px 16px 20px;
+    font-size: 14px;
+    color: #ffffff;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+
+    &::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    &:focus {
+        outline: none;
+        border-color: #ffffff;
+    }
+}
+
+.submitBtn {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    transition: transform 0.2s ease;
+
+    &:hover {
+        transform: translateY(-50%) translateX(4px);
+    }
+}

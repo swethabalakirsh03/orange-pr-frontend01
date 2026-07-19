@@ -1,0 +1,152 @@
+$tablet: 992px;
+$mobile: 768px;
+
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 80px 0 0 0;
+}
+
+.inner {
+    width: min(100% - 4rem, 1400px);
+    margin: 0 auto;
+}
+
+.linksCol {
+    @media (max-width: $mobile) {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    @media (max-width: $tablet) {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    @media (max-width: $mobile) {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+.brandCol {
+    @media (max-width: $tablet) {
+        grid-column: 1 / -1; // Takes full width on tablet
+    }
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: 800;
+    margin: 0 0 24px 0;
+    letter-spacing: 0.02em;
+}
+
+.desc {
+    font-size: 13px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+.colHeading {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 24px 0;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.linkList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        font-size: 13px;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: #ffffff;
+        }
+    }
+}
+
+.contactList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 13px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.8);
+    }
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.bottomRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+
+    @media (max-width: $mobile) {
+        flex-direction: column-reverse;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+.copyright {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+}
+
+.socials {
+    display: flex;
+    gap: 16px;
+
+    a {
+        color: rgba(255, 255, 255, 0.7);
+        transition: color 0.2s ease;
+
+        svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        &:hover {
+            color: #ffffff;
+        }
+    }
+}

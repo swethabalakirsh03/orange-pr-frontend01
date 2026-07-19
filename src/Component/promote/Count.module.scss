@@ -1,0 +1,65 @@
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+.count {
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: $mobile) {
+        flex-wrap: wrap;
+    }
+}
+
+.item {
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 22px 28px;
+    position: relative;
+
+
+
+    // @media (max-width: $mobile) {
+    //     flex: 0 0 50%;
+    //     max-width: 50%;
+    //     box-sizing: border-box;
+    // }
+
+    @media (max-width: $small) {
+        justify-content: flex-start;
+    }
+
+}
+
+.iconWrap {
+    @include flex-center;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+    background-color: #DEE4E6;
+}
+
+.icon {
+    width: 100%;
+    height: 60%;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.label {
+    font-size: 13px;
+    color: #5b6b82;
+    text-wrap: nowrap;
+}
+
+.value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111111;
+}
