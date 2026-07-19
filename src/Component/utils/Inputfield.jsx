@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../Getintouch/GetInTouch.module.scss';
+import styles from '../Getintouch/Getintouch.module.scss';
 const InputField = ({
     label,
     name,
