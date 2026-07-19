@@ -2,7 +2,7 @@ import React, { lazy, Suspense, useEffect, useState } from "react";
 import "./App.css";
 import LoadingScreen from "./Component/Home/LoadingScreen";
 
-const Homepage = lazy(() => import("./Component/Home/homepage"));
+const Homepage = lazy(() => import("./Component/Home/Homepage"));
 const ThinkCreatePromote = lazy(() =>
   import("./Component/promote/Thinkcreatepromote")
 );
