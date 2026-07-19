@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './GetInTouch.module.scss';
+import styles from './Getintouch.module.scss';
 import contactImg from '../../assets/Concept_pr/git_img.svg';
 import InputField from '../utils/Inputfield';
 
