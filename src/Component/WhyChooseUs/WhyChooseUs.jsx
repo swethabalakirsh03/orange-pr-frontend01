@@ -2,9 +2,9 @@ import React from 'react';
 import styles from './WhyChooseUs.module.scss';
 import WhyChooseCard from './WhyChooseCard';
 
-import mediaImg from '../../assets/Experts/media_img.svg';
-import influencerImg from '../../assets/Experts/influencer_img.svg';
-import eventsImg from '../../assets/Experts/event_img.svg';
+import mediaImg from '../../assets/Experts/Concept_pr/market_img.svg';
+import influencerImg from '../../assets/Experts/Concept_pr/st_img.svg';
+import eventsImg from '../../assets/Experts/Concept_pr/media_img.svg';
 
 const cardData = [
     {
