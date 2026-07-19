@@ -171,18 +171,6 @@
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 10;
 
-    &:hover {
-        transform: translateY(-8px) scale(1.02);
-        border-color: rgba(255, 255, 255, 0.8);
-        box-shadow: 0 32px 80px rgba(0, 0, 0, 0.25);
-
-        .playBtn {
-            transform: translate(-50%, -50%) scale(1.08);
-            background: $secondary;
-            color: #ff5f2e;
-            box-shadow: 0 10px 24px rgba(255, 95, 46, 0.35);
-        }
-    }
 
     img {
         width: 100%;
@@ -192,32 +180,6 @@
     }
 }
 
-.onAir {
-    position: absolute;
-    top: 22px;
-    left: 22px;
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    color: #ffffff;
-    background: #ff3b30;
-    padding: 4px 10px;
-    border-radius: 100px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    box-shadow: 0 4px 12px rgba(255, 59, 48, 0.35);
-
-    &::before {
-        content: "";
-        display: block;
-        width: 6px;
-        height: 6px;
-        background-color: #ffffff;
-        border-radius: 50%;
-        animation: blink 1.8s infinite;
-    }
-}
 
 @keyframes blink {
 
@@ -437,10 +399,6 @@
         margin-inline: auto;
         transform: none !important;
         box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
-
-        &:hover {
-            transform: translateY(-4px) scale(1.01) !important;
-        }
     }
 
     .heroLogo {

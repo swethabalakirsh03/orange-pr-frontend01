@@ -234,7 +234,7 @@ $small: 480px;
     z-index: 2;
     pointer-events: none;
 
-    backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px) !important;
     -webkit-backdrop-filter: blur(6px);
 
     -webkit-mask-image:
@@ -246,7 +246,7 @@ $small: 480px;
         linear-gradient(to top,
             rgba(0, 0, 0, 0.85) 0%,
             rgba(0, 0, 0, 0.7) 30%,
-            transparent 65%);
+            transparent 65%) !important;
 
     mask-image:
         radial-gradient(ellipse 130% 75% at 50% 100%,
@@ -257,7 +257,7 @@ $small: 480px;
         linear-gradient(to top,
             rgba(0, 0, 0, 0.85) 0%,
             rgba(0, 0, 0, 0.7) 30%,
-            transparent 65%);
+            transparent 65%) !important;
 }
 
 /* Foreground content container housing elements */

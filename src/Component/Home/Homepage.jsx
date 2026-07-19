@@ -82,7 +82,6 @@ const Homepage = () => {
                                 alt="On air segment"
                             />
 
-                            <span className={styles.onAir}>ON AIR</span>
 
                             <button className={`${styles.playBtn} btn-premium`} aria-label="Play video">
                                 <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
