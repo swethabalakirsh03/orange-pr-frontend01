@@ -6,7 +6,7 @@ import righttopPhoto from '../../assets/Thinkcreate_promote/orange_pr.svg';
 
 import teamPhoto from '../../assets/Thinkcreate_promote/promote.svg';
 import Promote from './Promote';
-import Count from './count';
+import Count from './Count';
 
 const ThinkCreatePromote = () => {
     return (
